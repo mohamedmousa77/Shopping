@@ -1,29 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Microsoft.AspNetCore.Mvc;
+using Shopping.Client.Data;
+using Shopping.Client.Models;
+using System.EnterpriseServices;
 using System.Web.Mvc;
 
 namespace Shopping.Client.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+
+        public HomeController()
+        {
+        }
+
+        public  ActionResult Index()
+        {
+            return View(ProductContext.Products);
+        }
+
+        public ActionResult Privacy()
         {
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Error()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }
